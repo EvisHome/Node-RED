@@ -30,6 +30,7 @@ You can read more about how I am using these from [Node-RED | Ikea and Hue Switc
 
 ## Subflow - Switch Button Press Loop
 [Switch Button Press Loop](https://github.com/EvisHome/Node-RED/blob/main/Dimmer-Switches/Subflow-Switch-Button-Press-Loop.json)
+
 To mimic the hue 5 press function, I created a subflow "Remote Press Mode Loop", there might be better ways to do this, and with fewer nodes, but this is what I came up with at the time and works well for me. The function has two variable that can be set. The number of presses (or modes) you want to loop through. The reset time for the loop, meaning the time in seconds that it will wait for sequential presses before the loop is reset and it will start counting presses from the beginning.
 
 ![image](img/example-hue-dimmer-press-mode-loop.png)
