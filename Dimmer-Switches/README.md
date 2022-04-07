@@ -13,10 +13,12 @@ You can read more about how I am using these from [Node-RED | Ikea and Hue Switc
 
 
 ## Subflow - Ikea Trådfri Dimmer Switch - switch node
+[Ikea Trådfri Dimmer Switch subflow (json)](https://github.com/EvisHome/Node-RED/blob/main/Dimmer-Switches/Subflow-Ikea-Trådfri-Dimmer-Switch.json)
 
 ![image](img/ikea-dimmer-switch.png)
 
 
 ## Subflow - Ikea Trådfri On/Off Switch - switch node
+[Ikea Trådfri On/Off Switch subflow (json)](https://github.com/EvisHome/Node-RED/blob/main/Dimmer-Switches/Subflow-Ikea-On-Off-Switch.json)
 
 ![image](img/ikea-on-off-switch.png)
