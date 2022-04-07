@@ -10,3 +10,8 @@ You can read more about how I am using these from [Node-RED | Ikea and Hue Switc
 [Philips Hue Button subflow (json)](https://github.com/EvisHome/Node-RED/blob/main/Dimmer-Switches/Subflow-Philips-Hue-Button.json)
 
 ![image](img/hue-button.png)
+
+
+## Subflow - Ikea Trådfri Dimmer Switch - switch node
+
+![image](img/ikea-dimmer-switch.png)
