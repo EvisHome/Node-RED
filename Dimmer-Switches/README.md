@@ -15,3 +15,8 @@ You can read more about how I am using these from [Node-RED | Ikea and Hue Switc
 ## Subflow - Ikea Trådfri Dimmer Switch - switch node
 
 ![image](img/ikea-dimmer-switch.png)
+
+
+## Subflow - Ikea Trådfri On/Off Switch - switch node
+
+![image](img/ikea-on-off-switch.png)
