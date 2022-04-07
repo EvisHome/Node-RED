@@ -1,0 +1,302 @@
+[
+    {
+        "id": "cf748d132efe23f0",
+        "type": "subflow",
+        "name": "Ikea Dimmer Switch",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 240,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 890,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 880,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 910,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 4
+                    }
+                ]
+            },
+            {
+                "x": 910,
+                "y": 320,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 5
+                    }
+                ]
+            },
+            {
+                "x": 910,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 6
+                    }
+                ]
+            },
+            {
+                "x": 920,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 7
+                    }
+                ]
+            },
+            {
+                "x": 890,
+                "y": 460,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 8
+                    }
+                ]
+            },
+            {
+                "x": 890,
+                "y": 500,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 9
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 540,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 10
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 600,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 11
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 640,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 12
+                    }
+                ]
+            },
+            {
+                "x": 900,
+                "y": 680,
+                "wires": [
+                    {
+                        "id": "8bd0dcc5e44b739f",
+                        "port": 13
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "1001 - On-Off - Very Long Press",
+            "1002 - On-Off  - Short Press",
+            "2001 - Brightness-UP - Long Press",
+            "2002 - Brightness-UP - Short Press",
+            "2003 - Brightness-UP - Long Release",
+            "3001 - Brightness-Down - Long Press",
+            "3002 - Brightness-Down - Short Press",
+            "3003 - Brightness-Down - Long Release",
+            "4001 - Left-Button - Long Press",
+            "4002 - Left-Button - Short Press",
+            "4003 - Left-Button - Long Release",
+            "5001 - Right-Button - Long Press",
+            "5002 - Right-Button - Short Press",
+            "5003 - Right-Button - Long Release"
+        ]
+    },
+    {
+        "id": "8bd0dcc5e44b739f",
+        "type": "switch",
+        "z": "cf748d132efe23f0",
+        "name": "Ikea Dimmer Switch",
+        "property": "payload.event.event",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1002",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2002",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2003",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3002",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3003",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4002",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4003",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5002",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5003",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 14,
+        "x": 440,
+        "y": 360,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "affa2f2debece0f5",
+        "type": "comment",
+        "z": "cf748d132efe23f0",
+        "name": "On-Off Button Behaviour",
+        "info": "short-press-down = 2 x 1002. \n\nlong-press-down = 2 x 1002 + 2 x 1001\n\nnothing on release",
+        "x": 610,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "367611287b1c903d",
+        "type": "comment",
+        "z": "cf748d132efe23f0",
+        "name": "==> 2x 1002 & 2x 1001",
+        "info": "",
+        "x": 1140,
+        "y": 80,
+        "wires": []
+    }
+]
