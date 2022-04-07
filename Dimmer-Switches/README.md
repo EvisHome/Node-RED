@@ -1,3 +1,6 @@
+# Ikea and Hue Switches for Home Assistant
+![image](img/switches.jpg)
+
 You can read more about how I am using these from [Node-RED | Ikea and Hue Switches for Home Assistant](https://lab.evishome.com/node-red-switches-for-ha/)
 
 ![image](img/example-hue-dimmer-press-mode-loop.png)
