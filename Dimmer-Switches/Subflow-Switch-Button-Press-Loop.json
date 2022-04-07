@@ -1,0 +1,148 @@
+[
+    {
+        "id": "ed6e3686.329a6",
+        "type": "subflow",
+        "name": "Remote Press Mode Loop",
+        "info": "By default loops output counter between 1 and MaxValue in steps of 1\n\nSet payload value to \"inc\", loops output counter between 1 and MaxValue in steps of 1\n\nSet payload value to \"dec\", loops output counter between Maxvalue and 1 in steps of 1\n\nSett payload value to \"reset\", to set counter to 0.\n\n\nMaxValue, sets the the maximum loop value.\n\nResetDelay, sets time in seconds to reset the counter after now input has been received. If set to 0, counter is not reset.",
+        "category": "",
+        "in": [
+            {
+                "x": 700,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "65adebe1.70ac2c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1540,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "6e5132fe.3c3cdc",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ResetDelay",
+                "type": "num",
+                "value": "5"
+            },
+            {
+                "name": "MaxNumber",
+                "type": "num",
+                "value": "5"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "65adebe1.70ac2c",
+        "type": "function",
+        "z": "ed6e3686.329a6",
+        "name": "Input Control",
+        "func": "var method = msg.payload;\n\nif (method == \"inc\") {\n    msg.payload = method;\n    msg.increment = true;\n    return msg;\n} else if (method == \"dec\") {\n    msg.payload = method;\n    msg.decrement = true;\n    return msg;\n} else if (method == \"reset\") {\n    msg={reset:true};\n    return msg;\n} else {\n    msg.payload = \"inc\";\n    msg.increment = true;\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\nreturn;",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nreturn;",
+        "libs": [],
+        "x": 950,
+        "y": 360,
+        "wires": [
+            [
+                "db641066.810958"
+            ]
+        ]
+    },
+    {
+        "id": "db641066.810958",
+        "type": "counter",
+        "z": "ed6e3686.329a6",
+        "name": "Counter",
+        "init": "0",
+        "step": "1",
+        "lower": "",
+        "upper": "",
+        "mode": "increment",
+        "outputs": 1,
+        "x": 1100,
+        "y": 460,
+        "wires": [
+            [
+                "1ab0fd58.a94413",
+                "6e5132fe.3c3cdc"
+            ]
+        ]
+    },
+    {
+        "id": "b8e12b23.b15558",
+        "type": "trigger",
+        "z": "ed6e3686.329a6",
+        "name": "Reset Delay",
+        "op1": "",
+        "op2": "reset",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "5",
+        "extend": true,
+        "overrideDelay": true,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 950,
+        "y": 540,
+        "wires": [
+            [
+                "65adebe1.70ac2c"
+            ]
+        ]
+    },
+    {
+        "id": "1ab0fd58.a94413",
+        "type": "function",
+        "z": "ed6e3686.329a6",
+        "name": "Reset Check",
+        "func": "var counter = msg.payload;\nvar ResetDelay = env.get(\"ResetDelay\")*1000\n//var ResetAfter = 3000\n\nif (counter == 0) {\n    // If counter was reset do not send anything\n    msg = null\n    return msg;\n} else {\n    if (ResetDelay != 0) {\n        // Send msg to start or reset the delay\n        msg.delay = ResetDelay\n        return msg;\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\nreturn;",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nreturn;",
+        "x": 1270,
+        "y": 540,
+        "wires": [
+            [
+                "b8e12b23.b15558"
+            ]
+        ]
+    },
+    {
+        "id": "6e5132fe.3c3cdc",
+        "type": "function",
+        "z": "ed6e3686.329a6",
+        "name": "Output Control",
+        "func": "var method = msg.payload;\nvar counter = msg.count;\nvar MaxNumber = env.get(\"MaxNumber\");\n// var MaxNumber = 5\nvar state = msg.state;\nvar msg2\n\nif (counter > MaxNumber) {\n    if (method == \"inc\") {\n        msg = null;\n        msg2 = {reset:1};\n        return [msg, msg2];\n    }\n} else if (counter < 1) {\n    if (method == \"dec\") {\n        msg = null;\n        msg2 = {reset:MaxNumber};\n        return [msg, msg2];\n    }\n\n} else {\n    //msg = null\n    msg.payload = counter;\n    return msg;\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\n//return;",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\n//return;",
+        "libs": [],
+        "x": 1280,
+        "y": 360,
+        "wires": [
+            [],
+            [
+                "db641066.810958"
+            ]
+        ]
+    }
+]
