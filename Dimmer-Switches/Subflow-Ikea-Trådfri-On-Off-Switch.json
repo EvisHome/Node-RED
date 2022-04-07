@@ -1,0 +1,146 @@
+[
+    {
+        "id": "508cc52edf1b1738",
+        "type": "subflow",
+        "name": "Ikea On-Off Switch",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 260,
+                "y": 320,
+                "wires": [
+                    {
+                        "id": "cf282a5258c787b1"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 810,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "cf282a5258c787b1",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 810,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "cf282a5258c787b1",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 820,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "cf282a5258c787b1",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 810,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "cf282a5258c787b1",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 810,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "cf282a5258c787b1",
+                        "port": 4
+                    }
+                ]
+            },
+            {
+                "x": 820,
+                "y": 440,
+                "wires": [
+                    {
+                        "id": "cf282a5258c787b1",
+                        "port": 5
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "ON Button - 1001 - Long Press",
+            "ON Button - 1002 - Short Press",
+            "ON Button - 1003 - Long Release",
+            "OFF Button - 2001 - Long Press",
+            "OFF Button - 2002 - Short Press",
+            "OFF Button - 2003 - Long Release"
+        ]
+    },
+    {
+        "id": "cf282a5258c787b1",
+        "type": "switch",
+        "z": "508cc52edf1b1738",
+        "name": "Ikea On/Off Switch",
+        "property": "payload.event.event",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1002",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1003",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2001",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2002",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2003",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    }
+]
